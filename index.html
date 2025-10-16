@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>手紙の演出</title>
+<style>
+  body {
+    background-color: #f2e8dc;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    overflow: hidden;
+    font-family: "游明朝", serif;
+  }
+
+  .envelope {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: #c19a6b;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: transform 1s ease;
+  }
+
+  .letter {
+    position: absolute;
+    width: 280px;
+    height: 180px;
+    background: #fff;
+    top: 100%;
+    left: 10px;
+    padding: 20px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    transition: top 2s ease;
+    opacity: 0;
+  }
+
+  .open .letter {
+    top: 10px;
+    opacity: 1;
+  }
+</style>
+</head>
+<body>
+
+<div class="envelope" id="envelope">
+  <div class="letter">
+    <h2>拝啓</h2>
+    <p>この手紙を読んでくれてありがとう。<br>test</p>
+    <p style="text-align: right;">敬具</p>
+  </div>
+</div>
+
+<script>
+  const envelope = document.getElementById('envelope');
+  envelope.addEventListener('click', () => {
+    envelope.classList.toggle('open');
+  });
+</script>
+
+</body>
+</html>
